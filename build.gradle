@@ -1,6 +1,6 @@
 apply plugin: 'idea'
 
-version = '5.1'
+version = '5.2'
 ext.mediaDir = file('media')
 
 buildDir = file('build/gradle')
@@ -25,7 +25,6 @@ buildscript {scriptHandler ->
         // for local dokka in lib-compile
         //classpath ':dokka-fatjar'
         //classpath ':dokka-gradle-plugin'
-        classpath 'org.jetbrains.dokka:dokka-gradle-plugin:0.9.13'
         classpath "com.install4j:install4j-gradle:6.1.1"
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
     }
