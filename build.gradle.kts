@@ -46,7 +46,6 @@ buildscript {
         // for local dokka in lib-compile
         //classpath ':dokka-fatjar'
         //classpath ':dokka-gradle-plugin'
-        classpath("com.install4j:install4j-gradle:6.1.1")
         classpath("com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3")
     }
 }
