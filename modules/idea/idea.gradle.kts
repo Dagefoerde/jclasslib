@@ -1,18 +1,7 @@
-import org.jetbrains.intellij.IntelliJPluginExtension
 import org.jetbrains.intellij.tasks.PublishTask
 
 plugins {
     id("org.jetbrains.intellij") version "0.2.1"
-}
-
-buildscript {
-    dependencies {
-        repositories {
-            maven {
-                setUrl("http://dl.bintray.com/jetbrains/intellij-plugin-service")
-            }
-        }
-    }
 }
 
 apply {
@@ -26,10 +15,12 @@ dependencies {
     compile("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
 }
 
-configure<IntelliJPluginExtension> {
+intellij {
     version = "IC-2016.2.5"
     pluginName = "jclasslib"
-    setPlugins("ByteCodeViewer", "org.jetbrains.kotlin:$kotlinVersion-IJ2016.2-1@EAP-1.1")
+    // See https://plugins.jetbrains.com/plugin/6954-kotlin for kotlin plugin versions
+    // Add @EAP-1.1 to the version string for selecting a channel
+    setPlugins("ByteCodeViewer", "org.jetbrains.kotlin:$kotlinVersion-release-IJ2016.2-1")
     sandboxDirectory = "${rootProject.buildDir}/../idea_sandbox"
     updateSinceUntilBuild = false
 }

@@ -21,9 +21,9 @@ externalLibsDir = file("$buildDir/externalLibs")
 val kotlinVersion: String by extra
 
 buildscript {
-    extra["kotlinVersion"] = "1.1.0-rc-91"
+    extra["kotlinVersion"] = "1.1.0"
 
-    val mavenUrls = listOf("http://jcenter.bintray.com", "http://maven.ej-technologies.com/repository", "http://dl.bintray.com/kotlin/kotlin-eap-1.1")
+    val mavenUrls = listOf("http://jcenter.bintray.com", "http://maven.ej-technologies.com/repository")
     extra["mavenUrls"] = mavenUrls
 
     repositories {
@@ -42,6 +42,7 @@ buildscript {
 
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${extra["kotlinVersion"]}")
+        classpath("org.jetbrains.dokka:dokka-gradle-plugin:0.9.13")
 
         // for local dokka in lib-compile
         //classpath ':dokka-fatjar'
