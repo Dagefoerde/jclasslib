@@ -7,6 +7,7 @@
 
 package org.gjt.jclasslib.structures
 
+import de.wwu.mulijbe.FreeVariablesAttribute
 import org.gjt.jclasslib.structures.attributes.*
 import java.io.DataInput
 import java.io.DataOutput
@@ -75,6 +76,7 @@ interface AttributeContainer {
         SourceFileAttribute.ATTRIBUTE_NAME -> SourceFileAttribute(classFile)
         LineNumberTableAttribute.ATTRIBUTE_NAME -> LineNumberTableAttribute(classFile)
         LocalVariableTableAttribute.ATTRIBUTE_NAME -> LocalVariableTableAttribute(classFile)
+        FreeVariablesAttribute.ATTRIBUTE_NAME -> FreeVariablesAttribute(classFile)
         DeprecatedAttribute.ATTRIBUTE_NAME -> DeprecatedAttribute(classFile)
         EnclosingMethodAttribute.ATTRIBUTE_NAME -> EnclosingMethodAttribute(classFile)
         SignatureAttribute.ATTRIBUTE_NAME -> SignatureAttribute(classFile)

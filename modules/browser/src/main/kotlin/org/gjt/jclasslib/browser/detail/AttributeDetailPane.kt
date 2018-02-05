@@ -7,6 +7,8 @@
 
 package org.gjt.jclasslib.browser.detail
 
+import de.wwu.mulijbe.FreeVariablesAttribute
+import de.wwu.mulijbe.FreeVariablesAttributeDetailPane
 import org.gjt.jclasslib.browser.BrowserServices
 import org.gjt.jclasslib.browser.detail.attributes.*
 import org.gjt.jclasslib.structures.AttributeInfo
@@ -23,6 +25,7 @@ class AttributeDetailPane(services: BrowserServices) : MultiDetailPane<Attribute
         addCard(SourceFileAttribute::class.java, SourceFileAttributeDetailPane(services))
         addCard(LineNumberTableAttribute::class.java, LineNumberTableAttributeDetailPane(services))
         addCard(LocalVariableTableAttribute::class.java, LocalVariableTableAttributeDetailPane(services))
+        addCard(FreeVariablesAttribute::class.java, FreeVariablesAttributeDetailPane(services))
         addCard(EnclosingMethodAttribute::class.java, EnclosingMethodAttributeDetailPane(services))
         addCard(SignatureAttribute::class.java, SignatureAttributeDetailPane(services))
         addCard(LocalVariableTypeTableAttribute::class.java, LocalVariableTypeTableAttributeDetailPane(services))
